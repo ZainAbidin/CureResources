@@ -1,0 +1,5 @@
+C:\Users\Zain.Abidin\source\repos\WebApplication3\DLL\bin\Debug\DAL.dll
+C:\Users\Zain.Abidin\source\repos\WebApplication3\DLL\bin\Debug\DAL.pdb
+C:\Users\Zain.Abidin\source\repos\WebApplication3\DLL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Zain.Abidin\source\repos\WebApplication3\DLL\obj\Debug\DAL.dll
+C:\Users\Zain.Abidin\source\repos\WebApplication3\DLL\obj\Debug\DAL.pdb

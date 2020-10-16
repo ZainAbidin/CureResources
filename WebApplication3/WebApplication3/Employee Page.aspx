@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
            <script type="text/javascript">
-               function Validation(evt)
+        function Validation(evt)
                {
                    alert('Validation');
             var errors = "";
@@ -65,9 +65,6 @@
                 return 'Name can Only have alphabets!!\n'
             }
         }
-
-
-
         function CheckLocation(evt) {
             var City = document.getElementById('txtCity');
             var Country = document.getElementById('txtCountry');
@@ -84,7 +81,6 @@
                 return 'City and Country names can Only have alphabets!!\n'
             }
         }
-
         function CheckUsername(evt) {
             var Username = document.getElementById('txtUsername');
             var exp = /^[a-z. ]+$/
@@ -97,7 +93,9 @@
             else {
                 return 'Username should not have block letters and numbers!!\n'
             }
-        }</script>
+               }
+
+               </script>
    
 
     <title></title>
@@ -123,7 +121,6 @@
         box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
         transition: all 0.4s ease 0s;
         }
-        
         .backgroundimage {
         background-image:url('images/page.jpg');
         background-repeat:no-repeat;

@@ -1,0 +1,16 @@
+git clone https://github.com/ZainAbidin/CureResources.git     ----nai run krni, neya folder bnba dega yeh
+
+git status
+
+git add .
+
+git commit -m "bug fix"
+
+git push
+
+
+
+
+
+
+git pull

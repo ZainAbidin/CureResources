@@ -7,10 +7,10 @@ namespace WebApplication3
         Bll BllObj = new Bll();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null)
-            {
-                Response.Redirect("LoginPage.aspx");
-            }
+            //if (Session["username"] == null)
+            //{
+            //    Response.Redirect("LoginPage.aspx");
+            //}
         }
 
         protected void SearchBtn_Click(object sender, EventArgs e)

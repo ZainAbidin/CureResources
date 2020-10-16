@@ -1,5 +1,6 @@
 ﻿using System;
 using BLL;
+using System.Web.UI.WebControls;
 namespace WebApplication3
 {
     public partial class Admin_Page1 : System.Web.UI.Page
@@ -20,10 +21,10 @@ namespace WebApplication3
             //    Response.Redirect("Signup Page.aspx");
             //}
                                                                        
-            if ((Session["username"] == null) || ((string)Session["username"] != "saad.bakhshi"))
-            {
-                Response.Redirect("LoginPage.aspx");
-            }
+            //if ((Session["username"] == null) || ((string)Session["username"] != "saad.bakhshi"))
+            //{
+            //    Response.Redirect("LoginPage.aspx");
+            //}
 
             sendBroadcast.Visible = false;
             Broadcast.Visible = false;
@@ -32,28 +33,44 @@ namespace WebApplication3
 
         protected void ViewAllEmployeesBtn_Click(object sender, EventArgs e)
         {
-            ViewAllEmployeeGrid.DataSource = BllObj.viewAll();
-            ViewAllEmployeeGrid.DataBind();
-            ViewAllEmployeeGrid.Visible = true;
+
         }
 
         protected void EditEmployee_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EditEmployees.aspx");
+
         }
 
         protected void SendMessage_Click(object sender, EventArgs e)
         {
-            sendBroadcast.Visible = true;
-            Broadcast.Visible = true;
+            //sendBroadcast.Visible = true;
+            //Broadcast.Visible = true;
 
         }
 
         protected void sendBroadcast_Click(object sender, EventArgs e)
         {
-            
+
             BllObj.adminPageBroadcast(Broadcast.Text);
             broadcastrLabel.Text = "Message Broadcasted!";
         }
+
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        public static void ViewAllEmployees()
+        {
+            Bll BllObj = new Bll();
+            GridView ViewAllEmployeeGrid = new GridView();
+            ViewAllEmployeeGrid.DataSource = BllObj.viewAll();
+            ViewAllEmployeeGrid.DataBind();
+            ViewAllEmployeeGrid.Visible = true;
+        }
+
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        public static void BroadCast()
+        {
+
+        }
+
     }
+
 }

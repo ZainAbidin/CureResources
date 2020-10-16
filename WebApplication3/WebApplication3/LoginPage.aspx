@@ -1,10 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="WebApplication3.LoginPage" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="WebApplication3.LoginPage" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
+
         function Validation() {
             var errors = "";
             errors += CheckPassword();
@@ -36,6 +40,44 @@
                 return 'Username should not have block letters and numbers!!\n'
             }
         }
+
+
+        $(document).ready(function () {
+            $("#btnSubmit").click(function () {
+
+                var username = $('#txtUserName').val();
+                var password = $('#txtPWD').val();
+
+                $.ajax({
+
+                    type: "post",
+                    url: "LoginPage.aspx/testFunction",
+                    async: false,
+                    data: JSON.stringify({ "txtUserName": username, "txtPWD": password }),
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.d.msg == 0)
+                        {
+                            alert("User registered");
+                            window.location.href = "Employee Page.aspx?username=" + username;
+                        }
+                        else if (data.d.msg == 1)
+                        {
+                            alert("Admin");
+                            window.location.href = "Admin_Page.aspx";
+                        }
+                        else
+                        {
+                            alert("Wrong credentials or user not registered yet!")
+                        }
+                    },
+                    error: function () {
+                        alert("Failure");
+                    }
+                })
+            });
+        });
 
 
      </script>
@@ -109,8 +151,7 @@
             <td>
           </td>
             <td>
-                <asp:Button ID="btnSubmit" class="Button" runat="server" Text="Login" OnClientClick="return Validation()" onclick="btnSubmit_Click" />
-              
+                <input runat="server" type = "Button" ID="btnSubmit"  class="Button"  Text="Login" OnClientClick="return Validation()" onclick="btnSubmit_Click" />
                 &nbsp;&nbsp;
               
                 <asp:Button ID="btnSignup" class="Button" runat="server" Text="Sign up" OnClick="btnSignup_Click" />

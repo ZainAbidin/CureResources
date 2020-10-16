@@ -4,6 +4,67 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#ViewAllEmployeesBtn").click(function () {
+
+                $.ajax({
+
+                    type: "post",
+                    url: "Admin_Page.aspx/ViewAllEmployees",
+                    async: false,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (data) {
+                        alert("View All Employees ");
+                       
+                    },
+                    error: function () {
+                        alert("Failure");
+                    }
+                })
+            });
+        });
+
+        //$(document).ready(function () {
+        //    $("#SendMessageBtn").click(function () {
+
+        //        $.ajax({
+
+        //            type: "post",
+        //            url: "Admin_Page.aspx/BroadCast",
+        //            async: false,
+        //            contentType: 'application/json',
+        //            dataType: 'json',
+        //            success: function (data) {
+        //                alert("Broad cast message");
+        //                $('#sendBroadcast').attr("visibility", "visible ");
+        //                $('#Broadcast').attr("visibility", "visible ");
+        //                $('#Broadcast').removeAttr('visibility');
+        //               //window.location.href = "EditEmployees.aspx";
+
+        //            },
+        //            error: function () {
+        //                alert("Failure");
+        //            }
+        //        })
+        //    });
+        //});
+
+        function redirectToEditEmployee() {
+
+            window.location.href = "EditEmployees.aspx";
+        }
+        function makeBroadcastvisible() {
+
+            $('#sendBroadcast').attr("visibility", "visible");
+            $('#Broadcast').attr("visibility", "visible ");
+        }
+        </script>
     <title></title>
     <style type="text/css">
         .Button
@@ -51,19 +112,19 @@
             <asp:Button class="Button" ID="ViewAllEmployeesBtn" runat="server" OnClick="ViewAllEmployeesBtn_Click" Text="View All Employees" Width="300px" />
             <br />
             <br />
-            <asp:Button class="Button" ID="EditEmployeeBtn" runat="server" OnClick="EditEmployee_Click" Text="Edit Employee" Width="300px"  />
+            <input runat="server" type = "Button" class="Button" ID="EditEmployeeBtn" OnClick="redirectToEditEmployee()" Text="Edit Employee" Width="300px"  />
             <br />
             <br />
-            <asp:Button class="Button" ID="SendMessageBtn" runat="server" OnClick="SendMessage_Click" Text="Broadcast Message" Width="300px"  />
+            <input runat="server" type = "Button" class="Button" ID="SendMessageBtn" OnClick="makeBroadcastvisible()" Text="Broadcast Message" Width="300px"  />
 
             <br />
             <br />
             <asp:Label ID="broadcastrLabel" runat="server" style="font-size: large"></asp:Label>
             <br />
-            <asp:TextBox ID="Broadcast" runat="server" Height="58px" Width="285px"></asp:TextBox>
+            <asp:TextBox ID="Broadcast" runat="server"  Height="58px" Width="285px"></asp:TextBox>
             <br />
             <br />
-            <asp:Button class="Button" ID="sendBroadcast" runat="server" OnClick="sendBroadcast_Click" Text="Send" />
+            <asp:Button class="Button" ID="sendBroadcast"  runat="server" OnClick="sendBroadcast_Click" Text="Send" />
         
         </div>
         <div style="padding-left: 20%; height: 197px;">

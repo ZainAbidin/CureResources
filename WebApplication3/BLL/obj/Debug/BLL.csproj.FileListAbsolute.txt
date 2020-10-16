@@ -6,3 +6,11 @@ C:\Users\Zain.Abidin\source\repos\WebApplication3\BLL\obj\Debug\BLL.dll
 C:\Users\Zain.Abidin\source\repos\WebApplication3\BLL\obj\Debug\BLL.pdb
 C:\Users\Zain.Abidin\source\repos\WebApplication3\BLL\bin\Debug\DAL.dll
 C:\Users\Zain.Abidin\source\repos\WebApplication3\BLL\bin\Debug\DAL.pdb
+D:\CureResources\WebApplication3\BLL\bin\Debug\BLL.dll
+D:\CureResources\WebApplication3\BLL\bin\Debug\BLL.pdb
+D:\CureResources\WebApplication3\BLL\bin\Debug\DAL.dll
+D:\CureResources\WebApplication3\BLL\bin\Debug\DAL.pdb
+D:\CureResources\WebApplication3\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\CureResources\WebApplication3\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\CureResources\WebApplication3\BLL\obj\Debug\BLL.dll
+D:\CureResources\WebApplication3\BLL\obj\Debug\BLL.pdb

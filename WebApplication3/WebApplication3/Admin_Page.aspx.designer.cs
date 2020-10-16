@@ -39,7 +39,7 @@ namespace WebApplication3
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditEmployeeBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton EditEmployeeBtn;
 
         /// <summary>
         /// SendMessageBtn control.
@@ -48,7 +48,7 @@ namespace WebApplication3
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SendMessageBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton SendMessageBtn;
 
         /// <summary>
         /// broadcastrLabel control.

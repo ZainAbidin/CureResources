@@ -80,6 +80,12 @@
         });
 
 
+        function SignupPageOpen() {
+
+            window.location.href = "Signup Page.aspx";
+        }
+
+
      </script>
     <title></title>
     <style type="text/css">
@@ -125,7 +131,8 @@
 </head>
 <body class="backgroundimage">
     <form id="form1" runat="server" >
-        <h1 style="padding-left:40%; " class="auto-style1"><strong style="text-align: left">Cure Resources</strong></h1>
+        <h1 style="padding-left:40%; " class="auto-style1">
+            <strong style="text-align: left">Cure Resources</strong></h1>
 =
       <div style="font-size:x-large">
           <br />
@@ -151,10 +158,9 @@
             <td>
           </td>
             <td>
-                <input runat="server" type = "Button" ID="btnSubmit"  class="Button"  Text="Login" OnClientClick="return Validation()" onclick="btnSubmit_Click" />
-                &nbsp;&nbsp;
+                <button type = "button" ID="btnSubmit"  class="Button"  OnClientClick="return Validation()">Login</button>                &nbsp;&nbsp;
               
-                <asp:Button ID="btnSignup" class="Button" runat="server" Text="Sign up" OnClick="btnSignup_Click" />
+                <button type="button" ID="btnSignup" class="Button" onclick="SignupPageOpen()">Sign up</button>
             
             </td>
         </tr>

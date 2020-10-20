@@ -156,7 +156,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="authentication\Signup Page.aspx" />
+    <Content Include="Signup Page.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -198,11 +198,11 @@
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="authentication\Signup Page.aspx.cs">
+    <Compile Include="Signup Page.aspx.cs">
       <DependentUpon>Signup Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="authentication\Signup Page.aspx.designer.cs">
+    <Compile Include="Signup Page.aspx.designer.cs">
       <DependentUpon>Signup Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">

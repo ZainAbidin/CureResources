@@ -9,25 +9,14 @@ namespace WebApplication3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            //if ((string)Session["username"] != null)
-            //{
-            //    sendBroadcast.Visible = false;
-            //    Broadcast.Visible = false;
-            //    ViewAllEmployeeGrid.Visible = false;
-            //}
-            //else
-            //{
-            //    Response.Redirect("Signup Page.aspx");
-            //}
                                                                        
             //if ((Session["username"] == null) || ((string)Session["username"] != "saad.bakhshi"))
             //{
             //    Response.Redirect("LoginPage.aspx");
             //}
 
-            sendBroadcast.Visible = false;
-            Broadcast.Visible = false;
+            //sendBroadcast.Visible = false;
+            //Broadcast.Visible = false;
             ViewAllEmployeeGrid.Visible = false;
         }
 
@@ -43,8 +32,6 @@ namespace WebApplication3
 
         protected void SendMessage_Click(object sender, EventArgs e)
         {
-            //sendBroadcast.Visible = true;
-            //Broadcast.Visible = true;
 
         }
 

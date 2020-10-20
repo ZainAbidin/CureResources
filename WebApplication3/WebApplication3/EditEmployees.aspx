@@ -4,6 +4,34 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+
+function DoneBtnClick() {
+
+            var activity = $('#ActivityTextbox').val();
+            var message = $('#Messagebox').val();
+            $.ajax({
+
+                type: "post",
+                url: "EditEmployees.aspx/DoneBtn",
+                async: false,
+                data: JSON.stringify({ "activityTextBox": activity,"messageTextBox":message}),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (data) {
+
+                    $('#messageSentLabel').text("Message Sent");
+                },
+                error: function () {
+                    alert("Failure");
+                }
+            })
+        }
+    </script>
        <style type="text/css">
         .Button
         {
@@ -107,7 +135,7 @@
             <asp:Label ID="messageSentLabel" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:Button class="Button" ID="Activitybtn" runat="server" OnClick="Activitybtn_Click" Text="Done"/>
+            <button type="button" class="Button" ID="Activitybtn" onclick="DoneBtnClick()">Done</button>
                 <br />
                 <br />
                 <br />

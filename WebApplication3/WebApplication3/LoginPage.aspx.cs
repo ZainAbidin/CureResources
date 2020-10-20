@@ -34,7 +34,7 @@ namespace WebApplication3
 
         protected void btnSignup_Click(object sender, EventArgs e)
         {
-            Response.Redirect("authentication/Signup Page.aspx");
+            //Response.Redirect("authentication/Signup Page.aspx");
         }
 
 

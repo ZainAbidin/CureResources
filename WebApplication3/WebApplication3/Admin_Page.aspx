@@ -10,6 +10,12 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
+            $("#sendBroadcast").hide();
+            $("#Broadcast").hide();
+
+                
+        });
             $("#ViewAllEmployeesBtn").click(function () {
 
                 $.ajax({
@@ -28,32 +34,7 @@
                     }
                 })
             });
-        });
-
-        //$(document).ready(function () {
-        //    $("#SendMessageBtn").click(function () {
-
-        //        $.ajax({
-
-        //            type: "post",
-        //            url: "Admin_Page.aspx/BroadCast",
-        //            async: false,
-        //            contentType: 'application/json',
-        //            dataType: 'json',
-        //            success: function (data) {
-        //                alert("Broad cast message");
-        //                $('#sendBroadcast').attr("visibility", "visible ");
-        //                $('#Broadcast').attr("visibility", "visible ");
-        //                $('#Broadcast').removeAttr('visibility');
-        //               //window.location.href = "EditEmployees.aspx";
-
-        //            },
-        //            error: function () {
-        //                alert("Failure");
-        //            }
-        //        })
-        //    });
-        //});
+      
 
         function redirectToEditEmployee() {
 
@@ -61,8 +42,8 @@
         }
         function makeBroadcastvisible() {
 
-            $('#sendBroadcast').attr("visibility", "visible");
-            $('#Broadcast').attr("visibility", "visible ");
+            $("#sendBroadcast").show();
+            $("#Broadcast").show();
         }
         </script>
     <title></title>
@@ -112,10 +93,10 @@
             <asp:Button class="Button" ID="ViewAllEmployeesBtn" runat="server" OnClick="ViewAllEmployeesBtn_Click" Text="View All Employees" Width="300px" />
             <br />
             <br />
-            <input runat="server" type = "Button" class="Button" ID="EditEmployeeBtn" OnClick="redirectToEditEmployee()" Text="Edit Employee" Width="300px"  />
+            <button type="button" style="Width:300px" class="Button" ID="EditEmployeeBtn" OnClick="redirectToEditEmployee()">Edit Employee</button>  
             <br />
             <br />
-            <input runat="server" type = "Button" class="Button" ID="SendMessageBtn" OnClick="makeBroadcastvisible()" Text="Broadcast Message" Width="300px"  />
+            <button type = "button" style="width:300px" class="Button" ID="SendMessageBtn" OnClick="makeBroadcastvisible()">Broadcast message</button>
 
             <br />
             <br />

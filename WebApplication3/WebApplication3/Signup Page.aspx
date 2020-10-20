@@ -119,6 +119,10 @@
             }
         }
 
+        function GoBackBtn() {
+            window.location.href = "LoginPage.aspx";
+        }
+
         $(document).ready(function () {
             $('txtEmployeeCode').keyup(function () {
                 var empcode = $(this).val();
@@ -134,6 +138,12 @@
                     })
             })
         })
+
+        function GoBackBtn() {
+            windown.location.href = "LoginPage.aspx";
+        }
+
+
 
     </script>
     <title></title>
@@ -272,7 +282,7 @@
                     </td>
                     <td>
 
-                        <asp:Button class="Button" Text="Go Back" ID="GobackButton" runat="server"  style="font-size: medium;"  OnClick="GobackButton_Click" />
+                        <button type="button" class="Button" ID="GobackButton"  style="font-size: medium;" onclick="GoBackBtn()">Go Back</button>
 
                     </td>
                 </tr>

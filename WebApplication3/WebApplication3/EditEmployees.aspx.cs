@@ -19,28 +19,37 @@ namespace WebApplication3
         SearchEmployeeGrid.DataBind();
         }
 
-        protected void Activitybtn_Click(object sender, EventArgs e)
+        //protected void Activitybtn_Click(object sender, EventArgs e)
+        //{
+
+        //    if ((ActivityCheck1.Checked == true) && (ActivityCheck2.Checked == false))
+        //    {
+        //        SearchEmployeeGrid.DataSource = BllObj.spChangeEmployeeStatus(ActivityTextbox.Text);
+        //        SearchEmployeeGrid.DataBind();
+
+        //    }
+        //    //else if ((ActivityCheck1.Checked == false) && (ActivityCheck2.Checked == true))
+        //    //{
+        //    //    BllObj.spMessageToEmployee(ActivityTextbox.Text, Messagebox.Text);
+        //    //    messageSentLabel.Text = "Message sent";
+
+        //    //}
+        //    else if ((ActivityCheck1.Checked == true) && (ActivityCheck2.Checked == true))
+        //    {
+        //        SearchEmployeeGrid.DataSource = BllObj.spChangeEmployeeStatus(ActivityTextbox.Text);
+        //        BllObj.spMessageToEmployee(ActivityTextbox.Text, Messagebox.Text);
+        //        messageSentLabel.Text = "Message sent";
+        //        SearchEmployeeGrid.DataBind();
+        //    }
+        //}
+
+        [System.Web.Services.WebMethod(EnableSession = true)]
+
+        public static void DoneBtn(string activityTextBox, string messageTextBox)
         {
-
-            if ((ActivityCheck1.Checked == true) && (ActivityCheck2.Checked == false))
-            {
-                SearchEmployeeGrid.DataSource = BllObj.spChangeEmployeeStatus(ActivityTextbox.Text);
-                SearchEmployeeGrid.DataBind();
-
-            }
-            else if ((ActivityCheck1.Checked == false) && (ActivityCheck2.Checked == true))
-            {
-                BllObj.spMessageToEmployee(ActivityTextbox.Text, Messagebox.Text);
-                messageSentLabel.Text = "Message sent";
-
-            }
-            else if ((ActivityCheck1.Checked == true) && (ActivityCheck2.Checked == true))
-            {
-                SearchEmployeeGrid.DataSource = BllObj.spChangeEmployeeStatus(ActivityTextbox.Text);
-                BllObj.spMessageToEmployee(ActivityTextbox.Text, Messagebox.Text);
-                messageSentLabel.Text = "Message sent";
-                SearchEmployeeGrid.DataBind();
-            }
+            Bll BllObj = new Bll();
+            BllObj.spMessageToEmployee(activityTextBox, messageTextBox);
+            //messageSentLabel.Text = "Message sent";
         }
 
 

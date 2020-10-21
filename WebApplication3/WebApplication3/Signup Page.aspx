@@ -4,6 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         function Validation() {
             var errors = "";
@@ -18,6 +21,7 @@
                 alert(errors);
                 return false;
             }
+            return true;
         }
         function CheckAge() {
             var TA = document.getElementById('txtAge');
@@ -122,26 +126,48 @@
         function GoBackBtn() {
             window.location.href = "LoginPage.aspx";
         }
+        function click_Register() {
+            if (Validation()) {
+                register(); 
 
-        $(document).ready(function () {
-            $('txtEmployeeCode').keyup(function () {
-                var empcode = $(this).val();
-                    $.ajax({
-                        url: 'Signup Page.aspx/testfunction', method: 'post',
-                        data: { txtUserName: username, txtPWD: txtPWD },
-                        dataType: 'json',
-                        success: function (data) {
-                        },
-                        error: function (err) {
-                            alert(err);
-                        }
-                    })
+            }}
+        
+        function register() {
+
+            var Username = $('#txtUsername').val();
+            var ConfirmPassword = $('#txtConfirmPassword').val();
+            var Fname = $('#txtFname').val();
+            var Lname = $('#txtLname').val();
+            var City = $('#txtCity').val();
+            var Country = $('#txtCountry').val();
+            var EmployeeCode = $('#txtEmployeeCode').val();
+            var Age = $('#txtAge').val();
+            $.ajax({
+
+                type: "post",
+                url: "SignUp Page.aspx/SignUpBtn",
+                async: false,
+                data: JSON.stringify({ "Username": Username, "ConfirmPassword": ConfirmPassword, "Fname": Fname, "Lname": Lname, "City": City, "Country": Country, "EmployeeCode": EmployeeCode, "Age": Age }),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.d == 0) {
+
+                        
+                        alert("User Already registered");
+                        
+                    }
+                    else if (data.d==1)
+                    alert("User Registered");
+
+                },
+                error: function () {
+                    alert("Failure");
+                }
             })
-        })
-
-        function GoBackBtn() {
-            windown.location.href = "LoginPage.aspx";
         }
+        
+
 
 
 
@@ -277,7 +303,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button class="Button" Text="Register" ID="btnRegister" runat="server" OnClientClick="return Validation()" OnClick="btnRegister_Click" style="font-size: medium;"   />
+                        <button type="button" class="Button" ID="btnRegister" onclick="click_Register()" style="font-size: medium;">Register</button>
 
                     </td>
                     <td>

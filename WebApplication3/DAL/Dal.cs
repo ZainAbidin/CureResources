@@ -73,12 +73,13 @@ namespace DAL
                     {
                         returnvar = 1;
                     }
-                    return returnvar;
+                    
                 }
-                else
-                {
-                    return returnvar;
-                }
+                return returnvar;
+                //else
+                //{
+                //    return returnvar;
+                //}
 
             }
         }
